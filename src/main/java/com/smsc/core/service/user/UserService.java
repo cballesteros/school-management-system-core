@@ -1,4 +1,4 @@
-package com.smsc.core.service;
+package com.smsc.core.service.user;
 
 import com.smsc.core.model.User;
 import com.smsc.core.repository.UserRepository;
@@ -35,5 +35,15 @@ public class UserService implements IUserService {
     @Override
     public void delete(Long userId) {
         userRepository.deleteById(userId);
+    }
+
+    @Override
+    public Boolean existsByUsername(String username) {
+        return userRepository.existsByUsername(username);
+    }
+
+    @Override
+    public Boolean existsByEmail(String email) {
+        return userRepository.existsByEmail(email);
     }
 }

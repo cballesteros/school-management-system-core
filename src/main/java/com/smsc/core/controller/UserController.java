@@ -1,9 +1,10 @@
 package com.smsc.core.controller;
 
 import com.smsc.core.model.User;
-import com.smsc.core.service.UserService;
+import com.smsc.core.service.user.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.repository.query.Param;
+import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -20,6 +21,7 @@ public class UserController {
     }
 
     @GetMapping("/all")
+    @PreAuthorize("hasAuthority('ADMINISTRATOR')")
     public List<User> getAll() {
         return userService.getAll();
     }
