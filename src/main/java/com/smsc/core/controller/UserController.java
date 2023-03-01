@@ -11,12 +11,13 @@ import java.util.List;
 
 @RestController
 @RequestMapping("/api/v1/user")
+@CrossOrigin(origins = "*", maxAge = 3600)
 public class UserController {
 
     @Autowired private UserService userService;
 
     @GetMapping
-    public User getUser(@Param("userId") String userId) {
+    public User getOne(@Param("userId") String userId) {
         return userService.getOneById(Long.parseLong(userId));
     }
 
