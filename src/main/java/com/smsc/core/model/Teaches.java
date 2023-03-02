@@ -6,12 +6,12 @@ import lombok.*;
 
 @Data
 @Entity
-@Table(name = "enrolled")
-public class Enrolled {
+@Table(name = "teaches")
+public class Teaches {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    @Column(name = "enrolled_id")
+    @Column(name = "teaches_id")
     private Long id;
 
     @ManyToOne(fetch = FetchType.LAZY)
