@@ -1,4 +1,4 @@
-package com.smsc.core.service;
+package com.smsc.core.service.user;
 
 import com.smsc.core.model.User;
 
@@ -15,4 +15,8 @@ public interface IUserService {
     User update(User user);
 
     void delete(Long userId);
+
+    Boolean existsByUsername(String username);
+
+    Boolean existsByEmail(String email);
 }
