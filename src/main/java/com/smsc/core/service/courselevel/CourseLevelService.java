@@ -3,9 +3,11 @@ package com.smsc.core.service.courselevel;
 import com.smsc.core.model.CourseLevel;
 import com.smsc.core.repository.CourseLevelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class CourseLevelService implements ICourseLevelService {
 
     @Autowired private CourseLevelRepository courseLevelRepository;

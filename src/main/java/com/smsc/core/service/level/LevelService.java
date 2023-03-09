@@ -3,9 +3,11 @@ package com.smsc.core.service.level;
 import com.smsc.core.model.Level;
 import com.smsc.core.repository.LevelRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class LevelService implements ILevelService {
 
     @Autowired private LevelRepository levelRepository;
