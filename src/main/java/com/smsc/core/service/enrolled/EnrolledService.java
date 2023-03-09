@@ -3,9 +3,11 @@ package com.smsc.core.service.enrolled;
 import com.smsc.core.model.Enrolled;
 import com.smsc.core.repository.EnrolledRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class EnrolledService implements IEnrolledService {
 
     @Autowired private EnrolledRepository enrolledRepository;

@@ -8,6 +8,7 @@ import com.smsc.core.controller.security.JwtUtils;
 import com.smsc.core.model.User;
 import com.smsc.core.service.user.UserDetailsImpl;
 import com.smsc.core.service.user.UserService;
+import jakarta.annotation.Nullable;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
@@ -30,6 +31,11 @@ public class AuthController {
     @Autowired private PasswordEncoder passwordEncoder;
     @Autowired private JwtUtils jwtUtils;
     @Autowired private UserService userService;
+
+    @PostMapping("/valid")
+    public ResponseEntity<?> verifyToken(@Nullable @RequestBody String token) {
+        return ResponseEntity.ok(jwtUtils.validateJwtToken(token));
+    }
 
     @PostMapping("/signing")
     public ResponseEntity<?> authenticateUser(@Valid @RequestBody LoginRequest loginRequest) {

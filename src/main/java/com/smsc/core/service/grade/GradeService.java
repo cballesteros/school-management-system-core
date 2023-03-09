@@ -3,9 +3,11 @@ package com.smsc.core.service.grade;
 import com.smsc.core.model.Grade;
 import com.smsc.core.repository.GradeRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class GradeService implements IGradeService {
 
     @Autowired private GradeRepository gradeRepository;

@@ -3,9 +3,11 @@ package com.smsc.core.service.teaches;
 import com.smsc.core.model.Teaches;
 import com.smsc.core.repository.TeachesRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import java.util.List;
 
+@Service
 public class TeachesService implements ITeachesService {
 
     @Autowired private TeachesRepository teachesRepository;
